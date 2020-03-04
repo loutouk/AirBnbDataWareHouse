@@ -1,4 +1,4 @@
-#Intégration et entrepôts de données
+# Intégration et entrepôts de données
 
 **Auteurs** | 
 --- | 
@@ -8,35 +8,76 @@ Lasherme Loic |
 Nantier Matthias |
 
 
-##Origine des données
+## Origine des données
 
-####[Michelin Restaurants](https://www.kaggle.com/jackywang529/michelin-restaurants)
-La première partie des données provient du site web Kaggle. Le jeu de données porte sur les restaurants étoilés Michelin (liste non exhaustive). Il est décomposé en 3 fichiers, un pour chaque nombre d'étoile.
+#### [Seattle Airbnb Open Data](https://www.kaggle.com/airbnb/seattle)
+Les données proviennent du site web Kaggle et sont fournies par Airbnb sous licence [CC0: Public Domain](https://creativecommons.org/publicdomain/zero/1.0/). Le jeu de données porte sur les réservations de logements chez Airbnb à Seattle.
 
-##Transformation
+#### Contenu
+- Les logements avec leurs propriétaires
+- Les avis des utilisateurs sur leurs résevrations
+- Les calendriers, c'est à dire les dates associées aux réservations à un certain prix, et leur disponibilité à cette date
 
-###Michelin Restaurants
-1. Concatener les trois fichiers csv en un seul . Supprimer les headers qui viennent se dupliquer et en ne garder que celui en première ligne.
-3. Les données sont déjà nettoyées.
-4. Préparer les clés des futures tables des dimensions pour le schéma en étoile.
-    1. Création de la colonne yearId selon la colonne year. Sa valeur est de 1 si l'année est 2018, et de 2 si l'année est 2019. Sur OpenRefine, on utilise l'expression GREL suivante pour créer une colonne à partir de year : `if(value==2018,1,2)`. Cela fonctionne comme nous avons seulement deux années à dans notre table.
-    2. Création de la colonne locationId selon la colonne city. Sa valeur est otpenue avec l'expression suivante : `sha1(value).substring(0,10)`
-    3. Même chose avec la colonne cuisine : on créer la colonne cuisineId avec le hashing.
-    4. Dans la colonne price, on enlève les colonnes ayant pour valeur 'N/A'. Sur OpenRefine, on utilise le text facet, pour sélectionner les lignes correspondantes, puis on utilise le flag pour les marquer et les supprimer.
-    5. On remplace les chaînes de caractères de la colonne price par un numéro représentant le nombre de `$` de cet colonne. On utilise le if vu précédemment de façon imbriquée. Exemple : `$$$` devient `3`.
-    6. On remplace le type chaîne de caractère en type entier. Sur OpenRefine : Edit cells > Common transforms > To number.
-5. On sauvegarde 4 copies de notre table. 3 pour les dimensions et une pour les faits.
-    1. Dans la table des faits, on conserve uniquement les colonnes name, latitude, longitude, price, yearId, locationId, cuisineId.
-    2. Dans la dimension de l'année, on garde la colonne year et yearId.
-    3. Dans la dimension localisation, on garde la colonne city, region et locationId
-    4. Dans la dimension cusisine, on garde la colonne cuisine et cuisineId.
-6. Pour chaque table des dimensions, on enlève les duplicats, c'est à dire que chaque ligne doit être unique. Voir l'annexe 'Removing duplicates' plus bas.
+### Idées
+- Décrire les caractéristiques de chaque quartier de Seattle en utilisant la description des logements
+- Quelles sont les plus forts moments d'affluence ? Comment les prix varient ?
+- Quelle est la tendance vis à vis des visiteurs à Seattle et des logements proposés ?
 
+## Transformation
 
+### Seattle Airbnb Open Data
+1. Créer une dimension date
+    1. Créer un nouveau projet OpenRefine à partir du fichier `calendar.csv` Pour accélérer la vitesse des opérations, on peut ne charger qu'une partie des données `Load at most 100000 row(s) of data`
+    2. Sous OpenRefine, créer une nouvelle colonne `year` depuis la colonne `date`. `Edit column` > `Add column based on this colulmn` > `split(value, "-")[0]`
+    3. Faire la même chose pour les mois et les jours
+    4. Créer la clé dateId pour notre nouvelle table à partir de la colonne `calendar`. Sa valeur est optenue avec l'expression suivante : `sha1(value).substring(0,10)`
+    5. Supprimer les colonnes `date`, `available`, `price`, `listing_id` qui ne sont plus utiles `Edit column` > `Remove this column`
+    6. Pour chaque table des dimensions, on enlève les duplicats, c'est à dire que chaque ligne doit être unique (2FN). Voir l'annexe 'Removing duplicates' plus bas.
+    7. On peut maintenant exporter ce projet en csv, pour récupérer notre dimension date
+2. Créer une dimension localisation
+    1. Créer un nouveau projet OpenRefine à partir du fichier `listings.csv` 
+    2. Ne garder que les colonnes `neighbourhood_cleansed`, `neighbourhood_group_cleansed` et `zipcode`
+    3. Créer la clé localisationId pour notre nouvelle table à partir de nos trois colonnes. Sa valeur est optenue avec l'expression suivante : `sha1(value + row.cells.zipcode.value + row.cells.neighbourhood_group_cleansed.value).substring(0,10)`
+    4. Comme avant, éliminer les duplicats
+    5. Exporter ce projet en csv pour récupérer la dimension localisation
+3. Créer une dimension propriétaire
+    1. Créer un nouveau projet OpenRefine à partir du fichier `listings.csv` 
+    2. Ne garder que les colonnes `host_id`, `host_name`, `host_since`, `host_response_time`, `host_response_rate`, `host_acceptance_rate`, `host_is_superhost`
+    3. Renommer la clé `host_id` en `proprietaireId`
+    4. Comme avant, éliminer les duplicats sur `proprietaireId`
+    5. Exporter ce projet en csv pour récupérer la dimension propriétaire
+4. Créer une dimension logement
+    1. Créer un nouveau projet OpenRefine à partir du fichier `listings.csv` 
+    2. Ne garder que les colonnes `name`, `summary`, `space`, `description`
+    3. Créer la clé `logementId` pour notre nouvelle table à partir de la colonne `name`. Sa valeur est optenue avec l'expression suivante : `sha1(value).substring(0,10)`
+    4. Comme avant, éliminer les duplicats sur `logementId`
+    5. Exporter ce projet en csv pour récupérer la dimension logement
+5. Créer la première partie de la table des faits
+    1. Créer un nouveau projet OpenRefine à partir du fichier `listings.csv` 
+    2. Ne garder que les colonnes `id`, `host_id`, `name`, `neighbourhood_cleansed`, `neighbourhood_group_cleansed` et `zipcode`
+    3. Recréer les colonnes correspondant aux clés des tables des dimensions à partir des colonnes gardées, comme fait dans les étapes précédentes
+    4. Supprimer les colonnes gardées pour ne laisser que les colonnes générées correspondants aux clés des tables des dimensions en gardant la colonne `id` pour plus tard
+    5. Exporter en csv
+6. Créer la deuxième partie de la table des faits
+    1. Créer un nouveau projet OpenRefine à partir du fichier `calendar.csv` 
+    2. Recréer la colonne `dateId` à partir de la colonne `date`, comme avant, puis la supprimer la colonne `date`
+    4. L'étape précédente est ralisé&e avec la commnade GREL suivante : `sha1(split(value, "-")[0] + split(value, "-")[1] + split(value, "-")[2]).substring(0,10)` 
+    3. Exporter en csv
+7. Fusionner les deux tables des faits en une seule avec une jointure sur `listing_id` / `id`
+    1. Ouvrir le projet de la première partie de la table des faits sous OpenRefine
+    2. Sur la colonne `id`, cliquer sur `Edit column` > `Add column based on this column`
+    3. Joindre la colonne `dateId` de l'autre projet à notre projet avec l'expression `cell.cross("tablefaits2", "listing_id").cells["dateId"].value[0]`
+    4. Même chose avec la colonne `price` avec l'expression `cell.cross("tablefaits2", "listing_id").cells["price"].value[0]`
+    5. Même chose avec la colonne `available` avec l'expression `cell.cross("tablefaits2", "listing_id").cells["available"].value[0]`
+    6. Supprimer la colonne `id`
+    7. Ne garder que la table des faits courante
+    8. Exporter en csv
+
+## Nettoyage
 
 ---
 
-##Removing duplicates
+## Removing duplicates
 These can be spotted by sorting them by a unique value, such as the Record ID (in this case we are assuming the Record ID should in fact be unique for each entry). The operation can be performed by clicking the triangle left of Record ID, then choosing ‘Sort‘… and selecting the ‘numbers’ bullet. In OpenRefine, sorting is only a visual aid, unless you make the reordering permanent. To do this, click the Sort menu that has just appeared at the top and choose ‘Reorder rows permanently’. If you forget to do this, you will get unpredictable results later in this tutorial.
 
 Identical rows are now adjacent to each other. Next, blank the Record ID of rows that have the same Record ID as the row above them, marking them duplicates. To do this, click on the Record ID triangle, choose Edit cells > Blank down. The status message tells you that 84 columns were affected (if you forgot to reorder rows permanently, you will get only 19; if so, undo the blank down operation in the ‘Undo/Redo’ tab and go back to the previous paragraph to make sure that rows are reordered and not simply sorted). Eliminate those rows by creating a facet on ‘blank cells’ in the Record ID column (‘Facet’ > ‘Customized facets’ > ‘Facet by blank’), selecting the 84 blank rows by clicking on ‘true’, and removing them using the ‘All’ triangle (‘Edit rows’ > ‘Remove all matching rows’). Upon closing the facet, you see 75,727 unique rows.

@@ -1,0 +1,181 @@
+neighbourhood_cleansed,localisationId,neighbourhood_group_cleansed,zipcode
+Columbia City,0295b7f73b,Rainier Valley,98144
+Wallingford,05abd00a9e,Other neighborhoods,98103
+Central Business District,0655e15066,Downtown,98105
+First Hill,07e2d31d2c,Downtown,98104
+Harrison/Denny-Blaine,0c9bac7db0,Central Area,98122
+Harrison/Denny-Blaine,0ceefc0af3,Central Area,98112
+Leschi,0cf5461257,Central Area,98144
+Central Business District,0dc3f67125,Downtown,98121
+Seaview,0f4732323b,West Seattle,98136
+Maple Leaf,114a972c78,Northgate,98125
+North Queen Anne,11fe43ca13,Queen Anne,98119
+Broadview,1282507aa7,Other neighborhoods,98117
+Belltown,13c63b5eae,Downtown,98109
+Central Business District,162d457498,Downtown,98104
+Whittier Heights,167a7122db,Ballard,98107
+Madrona,169036e8e1,Central Area,98112
+Meadowbrook,187236c189,Lake City,98125
+East Queen Anne,19202b71f4,Queen Anne,98109
+Greenwood,19bfc91405,Other neighborhoods,98133
+Phinney Ridge,1c59d67072,Other neighborhoods,98107
+Bitter Lake,1cfec0cc7f,Other neighborhoods,98133
+Wallingford,23a7a15c45,Other neighborhoods,98115
+Windermere,23e4ae4319,Other neighborhoods,98105
+Pike-Market,26683c62c2,Downtown,98121
+Belltown,29652f0722,Downtown,98101
+Broadway,2cdf43601b,Capitol Hill,98112
+First Hill,2d3bade85f,Downtown,98122
+Matthews Beach,2e976b0697,Lake City,98125
+Mount Baker,3066e73916,Rainier Valley,98144
+Lower Queen Anne,344ec0edee,Queen Anne,98119
+Broadway,35145d8db2,Capitol Hill,98101
+East Queen Anne,3685b570f7,Queen Anne,98119
+West Woodland,3723ff1a21,Ballard,98107
+Madison Park,388f1f3f07,Capitol Hill,98112
+North Beach/Blue Ridge,395dc6c7c4,Other neighborhoods,98117
+Stevens,3b0747fd7b,Capitol Hill,98112
+Highland Park,3b189ae8e0,Delridge,98106
+Lower Queen Anne,3c3c0b930b,Queen Anne,98121
+University District,3dd6eb1415,University District,98105
+Belltown,40570870ce,Downtown,98105
+Olympic Hills,42414548ca,Lake City,98125
+Greenwood,447099f2f7,Other neighborhoods,98103
+Riverview,45abeff19f,Delridge,98106
+University District,4638c05f86,University District,98103
+Arbor Heights,47a8b25472,West Seattle,98146
+Fairmount Park,47f1b2d813,West Seattle,98126
+North Admiral,47fa5a01ec,West Seattle,98116
+Mid-Beacon Hill,48a5dec582,Beacon Hill,98118
+High Point,4959dbe3d2,Delridge,98126
+Industrial District,49780286d6,Other neighborhoods,98134
+Greenwood,4accbe00d6,Other neighborhoods,98117
+Belltown,4d12676fb2,Downtown,98121
+North Beacon Hill,4e2263dfa3,Beacon Hill,98108
+Matthews Beach,4f287ecfd7,Lake City,98115
+Gatewood,4ff37de5f0,West Seattle,98136
+Minor,5259340789,Central Area,98122
+Fremont,55278ab90a,Other neighborhoods,98103
+View Ridge,55d0fdd7f5,Other neighborhoods,98115
+Broadway,56796029d2,Capitol Hill,98102
+Broadway,56796029d2,Capitol Hill,98102
+Haller Lake,56a7a233b9,Northgate,98125
+Green Lake,59162251bf,Other neighborhoods,98103
+Whittier Heights,5bef5bb942,Ballard,98117
+Pioneer Square,5d592c9875,Downtown,98134
+Victory Heights,6022039c83,Lake City,98115
+West Woodland,60a59dd394,Ballard,98117
+Westlake,62cabcf23a,Cascade,98109
+Phinney Ridge,67c9e25d14,Other neighborhoods,98103
+Fairmount Park,6ee78afa03,West Seattle,98116
+Montlake,6fae3d6855,Capitol Hill,98102
+Georgetown,7048d09608,Other neighborhoods,98108
+Green Lake,718863446e,Other neighborhoods,98115
+Yesler Terrace,724f31b4e5,Downtown,98122
+South Lake Union,7315b57928,Cascade,98109
+High Point,7672e9357a,Delridge,98106
+Fauntleroy,776e4bc4cd,West Seattle,98146
+Industrial District,78a3e89f05,Other neighborhoods,98108
+Wedgwood,7a18955474,Other neighborhoods,98115
+Belltown,7d4873498d,Downtown,98102
+Ravenna,82c487b148,Other neighborhoods,98105
+Atlantic,839a3d86ef,Central Area,98144
+Leschi,83da6a5661,Central Area,98122
+Rainier Beach,83e7f724fc,Rainier Valley,98178
+Phinney Ridge,855cd1c724,Other neighborhoods,98117
+North Admiral,874d29ad5a,West Seattle,98126
+Greenwood,8789ed3153,Other neighborhoods,98177
+University District,88b34f20a8,University District,98115
+Roosevelt,8d42cfe5b4,Other neighborhoods,98105
+Loyal Heights,8ee30350b7,Ballard,98115
+Maple Leaf,8fa797f785,Northgate,98115
+North College Park,8fc92ce52e,Northgate,98103
+Mann,913d24f817,Central Area,98112
+Gatewood,91a4818700,West Seattle,98126
+Sunset Hill,930e7b468e,Ballard,98107
+Briarcliff,95bb3195ab,Magnolia,98199
+Adams,97086db1c8,Ballard,98117
+Interbay,97e741d0bd,Interbay,98199
+Mann,99678580ee,Central Area,98122
+Eastlake,9aa5dffa56,Cascade,98102
+North Queen Anne,9cac7a9d0a,Queen Anne,98109
+Cedar Park,9d0e035ff9,Lake City,98125
+Pioneer Square,9dcdc9ef79,Downtown,98104
+Pike-Market,9e085abd3b,Downtown,98101
+Haller Lake,9e8b6e975f,Northgate,98133
+West Queen Anne,9eb3f6f293,Queen Anne,98119
+Crown Hill,9efca125fe,Other neighborhoods,98117
+South Beacon Hill,a2fae52fae,Beacon Hill,98118
+Alki,a40e85ac05,West Seattle,98116
+First Hill,a6151a647b,Downtown,98101
+South Park,a8b61a52a1,Other neighborhoods,98108
+Loyal Heights,a9b267f8b1,Ballard,98107
+Roxhill,abc0164d30,Delridge,98126
+Belltown,abeef01445,Downtown,98119
+Columbia City,ad41519f4d,Rainier Valley,98108
+Interbay,b3c8b2c4da,Interbay,98119
+South Beacon Hill,b407961c5e,Beacon Hill,98108
+Mount Baker,b45b297069,Rainier Valley,98118
+North Beacon Hill,b5f51c3596,Beacon Hill,98144
+North Delridge,b642352fd5,Delridge,98126
+Yesler Terrace,b6997e5ac5,Downtown,98144
+South Delridge,ba9a8caaca,Delridge,98106
+Windermere,bbb69d3b35,Other neighborhoods,98115
+Wallingford,bd2273bb30,Other neighborhoods,98105
+Broadview,bdac7efdcd,Other neighborhoods,98133
+Portage Bay,be1cc66ef9,Capitol Hill,98102
+North Beach/Blue Ridge,be89af4941,Other neighborhoods,98177
+Rainier Beach,c10a80a234,Rainier Valley,98118
+Pinehurst,c471ec7b1f,Northgate,98125
+Yesler Terrace,c4726b8f46,Downtown,98104
+Seaview,c4acf2e62b,West Seattle,98116
+Victory Heights,c55f67c961,Lake City,98125
+Holly Park,c785d72013,Beacon Hill,98108
+Broadview,ca1367c065,Other neighborhoods,98177
+Columbia City,ca79e1e58c,Rainier Valley,98118
+Lawton Park,cb6fee7766,Magnolia,98199
+South Lake Union,cd4fbfc7cc,Cascade,98102
+Ravenna,cd6910a671,Other neighborhoods,98115
+Sunset Hill,cd87c3044f,Ballard,98117
+Bryant,d25fada394,Other neighborhoods,98105
+Genesee,d350eab30c,West Seattle,98116
+Dunlap,d3a5afeabc,Rainier Valley,98118
+Adams,d4b0b68771,Ballard,98107
+Seward Park,d58627e35c,Seward Park,98118
+Madrona,d6fd138925,Central Area,98122
+Loyal Heights,d7dc3f251a,Ballard,98117
+Arbor Heights,d872ea0f8c,West Seattle,98136
+Atlantic,db9caf70fd,Central Area,98122
+Industrial District,dc2ce58c4e,Other neighborhoods,98104
+North Beacon Hill,dcd2db20fc,Beacon Hill,98122
+Brighton,df6836898c,Rainier Valley,98118
+Stevens,e0be0abebb,Capitol Hill,98102
+Crown Hill,e1de3d46b5,Other neighborhoods,98177
+Fairmount Park,e362f80c1e,West Seattle,98136
+North Delridge,e6acfe427d,Delridge,98106
+Holly Park,e923f1a23c,Beacon Hill,98118
+Industrial District,e9b65f4b6f,Other neighborhoods,98126
+Roosevelt,ebb449ed8b,Other neighborhoods,98115
+Broadway,ed573a63d3,Capitol Hill,98122
+Broadway,ed573a63d3,Capitol Hill,98122
+Southeast Magnolia,ee54326588,Magnolia,98199
+Laurelhurst,ef31f19682,Other neighborhoods,98105
+Mid-Beacon Hill,ef4663c73d,Beacon Hill,98108
+Mid-Beacon Hill,ef4663c73d,Beacon Hill,98108
+Fauntleroy,f050c39c21,West Seattle,98136
+Fremont,f098b483f2,Other neighborhoods,98107
+Fairmount Park,f13ea453bf,West Seattle,98118
+Central Business District,f187f2384a,Downtown,98101
+Central Business District,f187f2384a,Downtown,98101
+Central Business District,f187f2384a,Downtown,98101
+Genesee,f2d221b4f9,West Seattle,98126
+North College Park,f2f0c18d69,Northgate,98133
+Montlake,f37271964c,Capitol Hill,98112
+Minor,f3811d02ea,Central Area,98144
+Stevens,f45caa6659,Capitol Hill,98122
+Westlake,f4c872c288,Cascade,98101
+Meadowbrook,f542a2ca85,Lake City,98115
+West Queen Anne,f6e393a20d,Queen Anne,98109
+Bryant,f6ede2faf8,Other neighborhoods,98115
+International District,fb64ca8fed,Downtown,98104
+Lower Queen Anne,fbf6fe6842,Queen Anne,98109
