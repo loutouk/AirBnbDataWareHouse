@@ -23,7 +23,7 @@ Les données proviennent du site web Kaggle et sont fournies par Airbnb sous lic
 - Quelles sont les plus forts moments d'affluence ? Comment les prix varient ?
 - Quelle est la tendance vis à vis des visiteurs à Seattle et des logements proposés ?
 
-## Transformation
+## Transformation en schéma en étoile
 
 ### Seattle Airbnb Open Data
 1. Créer une dimension date
@@ -74,6 +74,8 @@ Les données proviennent du site web Kaggle et sont fournies par Airbnb sous lic
     8. Exporter en csv
 
 ## Nettoyage
+1. Enlever les valeurs nulles sous OpenRefine `Facet` > `Customized Facet` > `Facet by blank` puis cliquer sur `All` > `Edit rows` > `Remove all matching rows`
+2. Enlever les valeurs erronées en les repérant avec le `Facet` > `Text Facet` pour les chaînes de caractères, et `Facet` > `Numeric Facet` pour les nombres, les enlever comme expliquer ci-dessus
 
 ---
 
