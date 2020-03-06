@@ -1,7 +1,7 @@
 # Intégration et entrepôts de données
 
 **Auteurs** | 
---- | 
+:---: | 
 Boursier Louis |
 Filaudeau Eloi |
 Lasherme Loic |
@@ -75,6 +75,49 @@ Les données proviennent du site web Kaggle et sont fournies par Airbnb sous lic
 ## Nettoyage
 1. Enlever les valeurs nulles sous OpenRefine `Facet` > `Customized Facet` > `Facet by blank` puis cliquer sur `All` > `Edit rows` > `Remove all matching rows`
 2. Enlever les valeurs erronées en les repérant avec le `Facet` > `Text Facet` pour les chaînes de caractères, et `Facet` > `Numeric Facet` pour les nombres, les enlever comme expliquer ci-dessus
+
+---
+
+## Schéma en étoile
+
+### Table des faits - Analyse des réservations
+
+**Réservations** |
+ :---: |
+ dateId      |
+ logementId      |
+ proprietaireId |
+ localisationId |
+ available |
+ price |
+
+### Dimension date
+
+**Date** |
+ :---: |
+ dateId      |
+ ...      |   
+
+### Dimension logement
+
+**Date** |
+ :---: |
+ dateId      |
+ ...      |  
+
+### Dimension propriétaire
+
+**Proprietaire** |
+ :---: |
+ proprietaireId      |
+ ...      |  
+
+### Dimension localisation
+
+**Localisation** |
+ :---: |
+ localisationId      |
+ ...      |  
 
 ---
 
