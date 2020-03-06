@@ -30,7 +30,7 @@ Les données proviennent du site web Kaggle et sont fournies par Airbnb sous lic
     1. Créer un nouveau projet OpenRefine à partir du fichier `calendar.csv` Pour accélérer la vitesse des opérations, on peut ne charger qu'une partie des données `Load at most 100000 row(s) of data`
     2. Sous OpenRefine, créer une nouvelle colonne `year` depuis la colonne `date`. `Edit column` > `Add column based on this colulmn` > `split(value, "-")[0]`
     3. Faire la même chose pour les mois et les jours
-    4. Créer la clé dateId pour notre nouvelle table à partir de la colonne `calendar`. Sa valeur est optenue avec l'expression suivante : `sha1(value).substring(0,10)`
+    4. Créer la clé dateId pour notre nouvelle table à partir de la colonne `calendar`. Sa valeur est optenue avec l'expression suivante : `sha1(cells.year.value+cells.month.value+cells.day.value).substring(0,10)`
     5. Supprimer les colonnes `date`, `available`, `price`, `listing_id` qui ne sont plus utiles `Edit column` > `Remove this column`
     6. Pour chaque table des dimensions, on enlève les duplicats, c'est à dire que chaque ligne doit être unique (2FN). Voir l'annexe 'Removing duplicates' plus bas.
     7. On peut maintenant exporter ce projet en csv, pour récupérer notre dimension date
@@ -61,16 +61,15 @@ Les données proviennent du site web Kaggle et sont fournies par Airbnb sous lic
 6. Créer la deuxième partie de la table des faits
     1. Créer un nouveau projet OpenRefine à partir du fichier `calendar.csv` 
     2. Recréer la colonne `dateId` à partir de la colonne `date`, comme avant, puis la supprimer la colonne `date`
-    4. L'étape précédente est ralisé&e avec la commnade GREL suivante : `sha1(split(value, "-")[0] + split(value, "-")[1] + split(value, "-")[2]).substring(0,10)` 
+    4. L'étape précédente est ralisée avec la commnade GREL suivante : `sha1(split(value, "-")[0] + split(value, "-")[1] + split(value, "-")[2]).substring(0,10)` 
     3. Exporter en csv
 7. Fusionner les deux tables des faits en une seule avec une jointure sur `listing_id` / `id`
-    1. Ouvrir le projet de la première partie de la table des faits sous OpenRefine
-    2. Sur la colonne `id`, cliquer sur `Edit column` > `Add column based on this column`
-    3. Joindre la colonne `dateId` de l'autre projet à notre projet avec l'expression `cell.cross("tablefaits2", "listing_id").cells["dateId"].value[0]`
-    4. Même chose avec la colonne `price` avec l'expression `cell.cross("tablefaits2", "listing_id").cells["price"].value[0]`
-    5. Même chose avec la colonne `available` avec l'expression `cell.cross("tablefaits2", "listing_id").cells["available"].value[0]`
-    6. Supprimer la colonne `id`
-    7. Ne garder que la table des faits courante
+    1. Ouvrir le projet de la deuxième partie de la table des faits sous OpenRefine (celle qui contient le plus d'enregistrements)
+    2. Sur la colonne `listing_id`, cliquer sur `Edit column` > `Add column based on this column`
+        3. Joindre la colonne `logementId` de l'autre projet à notre projet avec l'expression `cell.cross("projetTableFaitsUne", "id").cells["logementId"].value[0]`
+    4. Même chose avec la colonne `proprietaireId` et `localisationId`
+    6. Supprimer la colonne `listing_id`
+    7. Ne garder que la table des faits courante comme table des faits
     8. Exporter en csv
 
 ## Nettoyage
