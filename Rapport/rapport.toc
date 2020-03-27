@@ -1,0 +1,10 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Conception de l'entrep\IeC {\^o}t}{3}
+\contentsline {subsection}{\numberline {2.1}Transformation des donn\IeC {\'e}es}{3}
+\contentsline {subsection}{\numberline {2.2}Nettoyage des donn\IeC {\'e}es}{5}
+\contentsline {subsection}{\numberline {2.3}Sch\IeC {\'e}ma en \IeC {\'e}toile de l'entrep\IeC {\^o}t}{5}
+\contentsline {section}{\numberline {3}Op\IeC {\'e}rations sur l'entrep\IeC {\^o}t}{5}
+\contentsline {subsection}{\numberline {3.1}Requ\IeC {\^e}tes :}{5}
+\contentsline {subsection}{\numberline {3.2}R\IeC {\'e}sultats :}{6}
+\contentsline {section}{\numberline {4}Conclusion}{8}
