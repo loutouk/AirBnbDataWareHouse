@@ -119,7 +119,9 @@ Les données proviennent du site web Kaggle et sont fournies par Airbnb sous lic
  localisationId      |
  ...      |  
 
----
+----
+[![Video](http://img.youtube.com/vi/HHdL8efJtyc/0.jpg)](http://www.youtube.com/watch?v=HHdL8efJtyc)
+----
 
 ![Star scheama](https://github.com/loutouk/AirBnbDataWareHouse/blob/master/Rapport/schema_entrepot.png)
 
