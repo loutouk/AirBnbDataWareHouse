@@ -120,11 +120,16 @@ Les données proviennent du site web Kaggle et sont fournies par Airbnb sous lic
  ...      |  
 
 ----
-# Présentation vidéo
-[![Video](http://img.youtube.com/vi/HHdL8efJtyc/0.jpg)](http://www.youtube.com/watch?v=HHdL8efJtyc)
-----
 
 ![Star scheama](https://github.com/loutouk/AirBnbDataWareHouse/blob/master/Rapport/schema_entrepot.png)
+
+----
+
+# Présentation vidéo
+
+[![Video](http://img.youtube.com/vi/HHdL8efJtyc/0.jpg)](http://www.youtube.com/watch?v=HHdL8efJtyc)
+
+----
 
 ## Removing duplicates
 These can be spotted by sorting them by a unique value, such as the Record ID (in this case we are assuming the Record ID should in fact be unique for each entry). The operation can be performed by clicking the triangle left of Record ID, then choosing ‘Sort‘… and selecting the ‘numbers’ bullet. In OpenRefine, sorting is only a visual aid, unless you make the reordering permanent. To do this, click the Sort menu that has just appeared at the top and choose ‘Reorder rows permanently’. If you forget to do this, you will get unpredictable results later in this tutorial.
